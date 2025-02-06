@@ -10,7 +10,7 @@
 
 Далее произвел установку CLI для управления ресурсами Yandex Cloud. Командой : curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 
-Настроил файлы авторизации для сервиса Yandex Cloud:  terraform.tfvars, variables.tf.
+Настроил файлы авторизации для сервиса Yandex Cloud: main.tf, variables.tf.
 
 
 Поднял Виртуальные машины main.tf.
