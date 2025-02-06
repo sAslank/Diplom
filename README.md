@@ -122,6 +122,12 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 скрин
 
+При возниковении сложности подключения сервера, один из вариантов решения добавить его вручную на самом сервере и перезапустить сервис
+
+скрин
+
+
+
 Логи
 
 С помощью Ansible разворачиваю Elasticsearch используя плейбук elasticsearch.yml с правкой конфигурации elasticsearch.yml
