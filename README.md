@@ -96,11 +96,11 @@ ansible.cfg выглядит следующим образом:
 
 Мониторинг
 
-Создал базу данных PostgreSQL с помощью плейбука psql.yml
+Создал базу данных PostgreSQL с помощью плейбука psql.yml. ansible-playbook zabbix_agent.yml -i hosts.cfg
  
 скрин
 
-Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf.
+Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. ansible-playbook zabbix_agent.yml -i hosts.cfg
 
 скрин
 
@@ -108,7 +108,7 @@ ansible.cfg выглядит следующим образом:
 
 скрин
 
-Поставил Zabbix-Server с файлом конфигурации zabbix_server.conf. Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
+Поставил Zabbix-Server с файлом конфигурации zabbix_server.conf. ansible-playbook zabbix_server.yml -i hosts.cfg  Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
 
 zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db
 systemctl restart zabbix-server zabbix-agent apache2 
