@@ -19,7 +19,7 @@
     
     - name: Создание HTML-странички
       copy:
-        content: "<html><head><title>МОЙ ДИПЛОМ</title></head><body><h1>Welcome ASLAN, NGINX is ready! =)</h1></body></html>"
+        content: "<html><head><title>My Diplom</title></head><body><h1>Welcome ASLAN, nginx is ready! =)</h1></body></html>"
         dest: /var/www/html/index.html
         owner: www-data
         group: www-data
