@@ -84,7 +84,7 @@ ansible.cfg выглядит следующим образом:
 
 скрин
 
-Проверил пинг всех созданных хостов.
+Сбросил старые ключи sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old. Проверил пинг всех созданных хостов.
 
 
 скрин
