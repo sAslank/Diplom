@@ -31,13 +31,17 @@ subnet-public1 - Kibana, Zabbix, Bastion,LB // Зона А
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/4.jpg)
 
-![alt text]https://github.com/sAslank/Diplom/blob/main/img/5.jpg
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/5.jpg)
 
 Так же была поднята сеть Security Groups соответствующих сервисов на входящий трафик к нужным портам.
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/10.jpg)
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/11.jpg)
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/12.jpg)
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/10.jpg)
 
 Произвел настройку балансировщика:
 
@@ -68,7 +72,7 @@ Ansible
 
 ansible.cfg выглядит следующим образом:
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/14.jpg)
 
 
 
