@@ -8,7 +8,11 @@
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/1.jpg)
 
-Далее произвел установку CLI для управления ресурсами Yandex Cloud. Командой : curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
+Далее произвел установку CLI для управления ресурсами Yandex Cloud. Командой : 
+
+```
+curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
+```
 
 Настроил файлы авторизации для сервиса Yandex Cloud: main.tf, variables.tf.
 
