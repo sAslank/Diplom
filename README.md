@@ -148,7 +148,7 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/27.jpg)
 
-Доступ открыт по адресу: 
+Доступ открыт по адресу: http://84.252.129.37/zabbix/
 
 Логин: Admin
 Пароль: zabbix
@@ -190,7 +190,7 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/34.jpg)
 
-Доступ к web Elasticsearch открыт по адресу: http://158.160.168.121:5601/login/
+Доступ к web Elasticsearch открыт по адресу: http://51.250.83.79:5601/login/
 
 
 Логи подтянулись, filebeat работает корректно.
