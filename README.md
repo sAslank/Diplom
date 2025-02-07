@@ -26,6 +26,7 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 # Сеть
 
 Были настроены подсети:
+
 subnet-private1 - Vm1 // Зона А
 
 subnet-private2 - Vm2 // Зона B
@@ -59,11 +60,11 @@ Target Group и вкл в неё две созданные вм
 
 Создал Backend Group настроил backends на target group, раннее созданную. Настроил healthcheck на корень (/) и порт 80, протокол HTTP.
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/b.jpg)
 
 Создал HTTP router указав путь (/) на backend group
 
-![alt text](https://github.com/sAslank/Diplom/blob/main/img/b.jpg)
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/7.jpg)
 
 Создал ALB для распределения трафика на веб-сервера, созданные ранее. Указал HTTP router, созданный ранее, задав listener тип auto, порт 80.
 
