@@ -23,7 +23,7 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 
 
 
-Сеть
+# Сеть
 
 Были настроены подсети:
 subnet-private1 - Vm1 // Зона А
@@ -33,6 +33,7 @@ subnet-private2 - Vm2 // Зона B
 subnet-private3 - Elasticsearch // Зона А
 
 subnet-public1 - Kibana, Zabbix, Bastion,LB // Зона А
+
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/3.jpg)
 
@@ -113,12 +114,17 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/21.jpg)
 
 
-Мониторинг
+# Мониторинг
 
-Создал базу данных PostgreSQL с помощью плейбука psql.yml. ```ansible-playbook zabbix_agent.yml -i hosts.cfg``` 
+Создал базу данных PostgreSQL с помощью плейбука psql.yml.
+
+```ansible-playbook zabbix_agent.yml -i hosts.cfg``` 
+
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/22.jpg)
 
-Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. ansible-playbook zabbix_agent.yml -i hosts.cfg
+Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. 
+
+```ansible-playbook zabbix_agent.yml -i hosts.cfg```
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/23.jpg)
 
@@ -128,10 +134,14 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/25.jpg)
 
-Поставил Zabbix-Server с файлом конфигурации zabbix_server.conf. ansible-playbook zabbix_server.yml -i hosts.cfg  Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
+Поставил Zabbix-Server с файлом конфигурации zabbix_server.conf. 
 
-zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db
-systemctl restart zabbix-server zabbix-agent apache2 
+```ansible-playbook zabbix_server.yml -i hosts.cfg ```
+
+Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
+
+```zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db
+systemctl restart zabbix-server zabbix-agent apache2``` 
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/26.jpg)
 
@@ -144,7 +154,7 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/28.jpg)
 
-При возниковении сложности подключения сервера, один из вариантов решения добавить его вручную на самом сервере и перезапустить сервис
+При возниковении сложности подключения сервера, один из вариантов решения добавить его вручную на самом сервере и перезапустить сервис.
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/29.jpg)
 
@@ -165,7 +175,7 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/31.jpg)
 
-Проверка с ВМ Elasticsearch: curl -XGET 'localhost:9200/_cluster/health?pretty'
+Проверка с ВМ Elasticsearch: ```curl -XGET 'localhost:9200/_cluster/health?pretty'```
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/32.jpg)
 
@@ -191,7 +201,7 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 Резервное копирование 
 
-Резервное копирование настроено через snapshots.tf , на ежедневные снимки, с хранением на 7 дней.
+Резервное копирование настроено через snapshots.tf , на ежедневные снимки к 6 часам, с хранением на 7 дней.
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/37.jpg)
 
