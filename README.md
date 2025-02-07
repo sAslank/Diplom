@@ -141,8 +141,8 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
 
-```zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db
-systemctl restart zabbix-server zabbix-agent apache2``` 
+```zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db``` 
+``` systemctl restart zabbix-server zabbix-agent apache2``` 
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/26.jpg)
 
@@ -170,7 +170,7 @@ systemctl restart zabbix-server zabbix-agent apache2```
 
 
 
-Логи
+# Логи
 
 С помощью Ansible разворачиваю Elasticsearch используя плейбук elasticsearch.yml с правкой конфигурации elasticsearch.yml
 
@@ -200,7 +200,7 @@ systemctl restart zabbix-server zabbix-agent apache2```
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/36.jpg)
 
 
-Резервное копирование 
+# Резервное копирование 
 
 Резервное копирование настроено через snapshots.tf , на ежедневные снимки к 6 часам, с хранением на 7 дней.
 
