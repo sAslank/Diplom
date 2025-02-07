@@ -27,8 +27,11 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 
 Были настроены подсети:
 subnet-private1 - Vm1 // Зона А
+
 subnet-private2 - Vm2 // Зона B
+
 subnet-private3 - Elasticsearch // Зона А
+
 subnet-public1 - Kibana, Zabbix, Bastion,LB // Зона А
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/3.jpg)
@@ -67,7 +70,7 @@ Target Group и вкл в неё две созданные вм
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/6.jpg)
 
 
-Сайт
+# Сайт
 
 
 Ansible 
@@ -89,8 +92,10 @@ ansible.cfg выглядит следующим образом:
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/16.jpg)
 
-Сбросил старые ключи sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old. Проверил пинг всех созданных хостов.
-
+Сбросил старые ключи 
+```
+sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old. Проверил пинг всех созданных хостов.
+```
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/17.jpg)
 
@@ -109,8 +114,7 @@ ansible.cfg выглядит следующим образом:
 
 Мониторинг
 
-Создал базу данных PostgreSQL с помощью плейбука psql.yml. ansible-playbook zabbix_agent.yml -i hosts.cfg
- 
+Создал базу данных PostgreSQL с помощью плейбука psql.yml. ```ansible-playbook zabbix_agent.yml -i hosts.cfg``` 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/22.jpg)
 
 Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. ansible-playbook zabbix_agent.yml -i hosts.cfg
