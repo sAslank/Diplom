@@ -6,7 +6,7 @@
 На локальный хост для удобства был установлен Visual studio code.
 Для подключения с локального хоста к сервису Yandex Cloud был создан файл .terraformrc и размещен в домашней директории. 
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/1.jpg)
 
 Далее произвел установку CLI для управления ресурсами Yandex Cloud. Командой : curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 
