@@ -164,7 +164,7 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/el.jpg)
 
 
-Настроил дешборды с отображением метрик.
+Настроил дашборды с отображением метрик.
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/38.jpg)
 
