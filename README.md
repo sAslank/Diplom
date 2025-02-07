@@ -79,58 +79,67 @@ ansible.cfg выглядит следующим образом:
 Был создан файл hosts.cfg который был непосредственно подвязан к шаблону hosts.tpl для более быстрой автоматизации, были заменены ip-адреса, вместо этого использовал FQDN как и требовалось по условию. Так же были созданы  RSA-ключи и подвязаны ко всем ВМ открыв доступ chmod 600 id_rsa*
 
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/15.jpg)
 
 Настроил ssh config проходить через Bastion. По пути ~/.ssh/config
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/16.jpg)
+
 Сбросил старые ключи sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old. Проверил пинг всех созданных хостов.
 
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/17.jpg)
 
 
 Установил Nginx на ВМ1 и ВМ2. Использовав плейбук nginx.yml
 Проверил доступность Web страниц с Вм1 и Вм2, а так же проверил доступность сайта в браузере по публичному ip адресу Load Balancer.
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/18.jpg)
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/19.jpg)
 
-![alt text]
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/20.jpg)
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/21.jpg)
 
 
 Мониторинг
 
 Создал базу данных PostgreSQL с помощью плейбука psql.yml. ansible-playbook zabbix_agent.yml -i hosts.cfg
  
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/22.jpg)
 
 Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. ansible-playbook zabbix_agent.yml -i hosts.cfg
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/23.jpg)
 
 Проверил статус служб Zabbix agent на Web серверах
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/24.jpg)
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/25.jpg)
 
 Поставил Zabbix-Server с файлом конфигурации zabbix_server.conf. ansible-playbook zabbix_server.yml -i hosts.cfg  Зашел с локального хоста по ssh на Zabbix и прописал схему и перезагрузил сервисы:
 
 zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | psql zabbix_db
 systemctl restart zabbix-server zabbix-agent apache2 
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/26.jpg)
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/27.jpg)
 
 Доступ открыт по адресу: 
 
 Логин: Admin
 Пароль: zabbix
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/28.jpg)
 
 При возниковении сложности подключения сервера, один из вариантов решения добавить его вручную на самом сервере и перезапустить сервис
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/29.jpg)
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/el.jpg)
 
 
 
@@ -138,34 +147,36 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 С помощью Ansible разворачиваю Elasticsearch используя плейбук elasticsearch.yml с правкой конфигурации elasticsearch.yml
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/31.jpg)
+
 Проверка с ВМ Elasticsearch: curl -XGET 'localhost:9200/_cluster/health?pretty'
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/32.jpg)
 
 
 
 Установил Filebeat в ВМ к веб-серверам, настроил отправку логов Nginx в Elasticsearch. Файл конфигурации: 
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/33.jpg)
 
 Далее разворачиваю Kibana и конфигурирую соединение с Elasticsearch. Файл конфигурации: 
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/34.jpg)
 
 Доступ к web Elasticsearch открыт по адресу: http://158.160.168.121:5601/login/
 
 
-скрин
-
-
 Логи подтянулись, filebeat работает корректно.
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/35.jpg)
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/36.jpg)
+
 
 Резервное копирование 
 
 Резервное копирование настроено через snapshots.tf , на ежедневные снимки, с хранением на 7 дней.
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/37.jpg)
 
 END.
