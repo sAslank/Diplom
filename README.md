@@ -1,8 +1,8 @@
 #  Дипломная работа по профессии «Системный администратор» - `Кумышев Аслан SYS-32`
 
-## Инфраструктура
+# Инфраструктура
 
-Для развертки инфраструктуры были использованы Terraform и Ansible.
+## Для развертки инфраструктуры были использованы Terraform и Ansible.
 На локальный хост для удобства был установлен Visual studio code.
 Для подключения с локального хоста к сервису Yandex Cloud был создан файл .terraformrc и размещен в домашней директории. 
 
@@ -75,7 +75,7 @@ Target Group и вкл в неё две созданные вм
 # Сайт
 
 
-Ansible 
+## Ansible 
 
 Установил ansible на локальном хосте где работали с terraform и настроил его на работу через bastion.
 
@@ -206,4 +206,4 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/37.jpg)
 
-END.
+# END.
