@@ -139,7 +139,14 @@ systemctl restart zabbix-server zabbix-agent apache2
 
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/29.jpg)
 
+ВМ подключены
+
 ![alt text](https://github.com/sAslank/Diplom/blob/main/img/el.jpg)
+
+
+Настроил дешборды с отображением метрик.
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/38.jpg)
 
 
 
