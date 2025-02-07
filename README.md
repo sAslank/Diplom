@@ -15,7 +15,7 @@
 
 Поднял Виртуальные машины main.tf.
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/2.jpg)
 
 
 
@@ -27,33 +27,36 @@ subnet-private2 - Vm2 // Зона B
 subnet-private3 - Elasticsearch // Зона А
 subnet-public1 - Kibana, Zabbix, Bastion,LB // Зона А
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/3.jpg)
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/4.jpg)
+
+![alt text]https://github.com/sAslank/Diplom/blob/main/img/5.jpg
 
 Так же была поднята сеть Security Groups соответствующих сервисов на входящий трафик к нужным портам.
 
 
-скрин
+
 
 
 Произвел настройку балансировщика:
 
 Target Group и вкл в неё две созданные вм
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/9.jpg)
 
 Создал Backend Group настроил backends на target group, раннее созданную. Настроил healthcheck на корень (/) и порт 80, протокол HTTP.
 
-скрин
+![alt text]
 
 Создал HTTP router указав путь (/) на backend group
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/b.jpg)
 
 Создал ALB для распределения трафика на веб-сервера, созданные ранее. Указал HTTP router, созданный ранее, задав listener тип auto, порт 80.
 
 
-скрин
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/6.jpg)
 
 
 Сайт
@@ -65,33 +68,32 @@ Ansible
 
 ansible.cfg выглядит следующим образом:
 
-скрин 
+![alt text]
 
 
 
 Был создан файл hosts.cfg который был непосредственно подвязан к шаблону hosts.tpl для более быстрой автоматизации, были заменены ip-адреса, вместо этого использовал FQDN как и требовалось по условию. Так же были созданы  RSA-ключи и подвязаны ко всем ВМ открыв доступ chmod 600 id_rsa*
 
 
-скрин
+![alt text]
 
 Настроил ssh config проходить через Bastion. По пути ~/.ssh/config
 
-скрин
-
+![alt text]
 Сбросил старые ключи sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old. Проверил пинг всех созданных хостов.
 
 
-скрин
+![alt text]
 
 
 Установил Nginx на ВМ1 и ВМ2. Использовав плейбук nginx.yml
 Проверил доступность Web страниц с Вм1 и Вм2, а так же проверил доступность сайта в браузере по публичному ip адресу Load Balancer.
 
-скрин
+![alt text]
 
-скрин
+![alt text]
 
-скрин
+![alt text]
 
 
 Мониторинг
