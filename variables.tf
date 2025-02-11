@@ -1,19 +1,34 @@
 #main
 
-variable "cloud_id" {
-  description = "The cloud ID"
-  type        = string
-  default     = ************************************
+#variable "cloud_id" {
+  #description = "The cloud ID"
+  #type        = string
+  #default     = ************************************
+#}
+#variable "folder_id" {
+  #description = "The folder ID"
+  #type        = string
+  #default     = ************************************
+#}
+#variable "token_id" {
+  #description = "The token ID"
+  #type        = string
+  #default     = ***************************************************
+#}
+
+variable "yc_token" {
+  type = string
+
 }
-variable "folder_id" {
-  description = "The folder ID"
-  type        = string
-  default     = ************************************
+
+variable "yc_cloud" {
+  type = string
+
 }
-variable "token_id" {
-  description = "The token ID"
-  type        = string
-  default     = ***************************************************
+
+variable "yc_folder" {
+  type = string
+
 }
 
 #zone
