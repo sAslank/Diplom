@@ -16,6 +16,10 @@ curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash.
 
 Настроил файлы авторизации для сервиса Yandex Cloud: main.tf, variables.tf.
 
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/ееее1.jpg)
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/ееее2.jpg)
+
 
 Поднял Виртуальные машины main.tf.
 
