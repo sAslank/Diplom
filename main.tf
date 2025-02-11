@@ -12,9 +12,9 @@ terraform {
 ### Токен YC
 
 provider "yandex" {
-  token     = "${var.token_id}"
-  cloud_id  = "${var.cloud_id}"
-  folder_id = "${var.folder_id}"
+  token     = var.yc_token
+  cloud_id  = var.yc_cloud
+  folder_id = var.yc_folder
   zone      = "${var.zone_a}"
 }
 
