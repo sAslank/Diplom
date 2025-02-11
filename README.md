@@ -117,11 +117,15 @@ sudo rm -f /home/fox/.ssh/known_hosts, sudo rm -f /home/fox/.ssh/known_hosts.old
 
 # Мониторинг
 
-Создал базу данных PostgreSQL с помощью плейбука psql.yml.
+Создал базу данных PostgreSQL с помощью плейбука psql.yml. Пароль был зашифрован с помощью команды: 
 
-```ansible-playbook zabbix_agent.yml -i hosts.cfg``` 
+```ansible-vault encrypt_string --vault-id @prompt 123456```
 
-![alt text](https://github.com/sAslank/Diplom/blob/main/img/22.jpg)
+Запуск зашифрованного плейбука произвел командой:
+
+```ansible-playbook --vault-id @prompt psql.yml -i hosts.cfg``` 
+
+![alt text](https://github.com/sAslank/Diplom/blob/main/img/еееееееее.jpg)
 
 Установил Zabbix агенты на web сервера с заменой конфигурации zabbix_agentd.conf. 
 
